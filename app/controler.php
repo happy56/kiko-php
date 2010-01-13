@@ -21,17 +21,20 @@ function index ( )
 *	@called_from :
 ***/
 { 
-   $val = 'some txt';
-   $smoe = array('some'=>'asasa','some1'=>'asasa','s1'=>'asasa','asasa','aqsasas3');
-   echo array_to_sql($smoe);
- require_once('views/welcome_view.php');
+
+
+   $data['title'] = 'JOJO wana cry!';
+   $data['body'] = 'MOJO wana cry2!';
    
     
-    return ;
+    return 'MOJO wana cry2!';;
 }/*@endof_function : index
 	*/
-
-
+function test()
+{
+   
+   
+}
 
 
 
