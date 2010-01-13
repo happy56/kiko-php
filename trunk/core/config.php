@@ -10,36 +10,68 @@
 /****************************************************************************
 	WARRING  : PLEASE BE CAREFUL BEFORE YOU EDIT AND UPDATE THIS FILE !!!
 *****************************************************************************/
-define('ACTIVE_MESSAGE',1); // selection on the 
-
-
-define('REDIRECTCODE','Refresh:0;url='.SITEURL);
-
-define('BID_PER_LIST_PAGE',10);
-define('BID_PAGINATOR_SHOWS',5); // how many page will be shown in the paginator for 5, it will show  1 2 3 4 5
-
-define('SYSTEM_MESSAGE_RESPONSE_CHANGED',' Seller Has Changed Bid Response !! ');
+define(ENV,'DEV'); #DEV = development , # RUN = deployment 
 
 
 
-
-/****
-* @name : Database Configaration
-* @Abstract :
-* @Example : $config['database']['server'] = 'localhost';
-*		   	$config['database']['dbname'] = 'dbname';;
-*		   	$config['database']['dbuser'] = 'dbuser';;
-*  			$config['database']['password']= 'dbpassword';;
-*
-***/
-//*
-$config['database']['server'] = 'localhost';
-$config['database']['dbuser'] = 'root';
-$config['database']['dbpassword']= '';
-$config['database']['dbname'] = 'message';
-/***
-* @endof: Database Configaration
-*/
+if(ENV == 'DEV')
+/**************************************************************************************
+** @name : Development ENVIONMENT
+** @Abstract : all the variables are set for the development work not for the deployment 
+****************************************************************************************/
+{
+    define(SITEURL, "http://localhost/kiko/");
+    define('REDIRECTCODE','Refresh:0;url='.SITEURL);
+   
+    /****
+    * @name : Database Configaration
+    * @Abstract :
+    * @Example : $config['database']['server'] = 'localhost';
+    *		   	$config['database']['dbname'] = 'dbname';;
+    *		   	$config['database']['dbuser'] = 'dbuser';;
+    *  			$config['database']['password']= 'dbpassword';;
+    *
+    ***/
+    //*
+    $config['database']['server'] = 'localhost';
+    $config['database']['dbuser'] = 'root';
+    $config['database']['dbpassword']= '';
+    $config['database']['dbname'] = 'message';
+    /***
+    * @endof: Database Configaration
+    */
+    
+    
+}else
+/**************************************************************************************
+** @name : Develoployment  ENVIONMENT # part RUN
+** @Abstract : all the variables are set for the deployment 
+****************************************************************************************/
+{
+    
+    define(SITEURL, "http://talgol.com/demo/kiko/");
+    define('REDIRECTCODE','Refresh:0;url='.SITEURL);
+   
+    /****
+    * @name : Database Configaration
+    * @Abstract :
+    * @Example : $config['database']['server'] = 'localhost';
+    *		   	$config['database']['dbname'] = 'dbname';;
+    *		   	$config['database']['dbuser'] = 'dbuser';;
+    *  			$config['database']['password']= 'dbpassword';;
+    *
+    ***/
+    //*
+    $config['database']['server'] = 'localhost';
+    $config['database']['dbuser'] = '';
+    $config['database']['dbpassword']= '';
+    $config['database']['dbname'] = '';
+    /***
+    * @endof: Database Configaration
+    */
+        
+   
+}
 
 
 /****

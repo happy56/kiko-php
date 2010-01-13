@@ -27,8 +27,14 @@ if (!empty($_GET['q']))
 	//global $URI;
 	$URI = split('[/.-]', $_GET['q']);
 
-	$fun = $URI[0] ;
+	$fun = $URI[0];
 	
+	if(ENV == 'DEV'){
+		if(!file_exists('views/'.$fun.'_view.php')){
+			file_put_contents('views/'.$fun.'_view.php','<h2>This file has been created Automatically! </h2><br />
+						<p> you will get this file in <b>'.'views/'.$fun.'_view.php'.'</b></p>');
+		}
+	}
 	//echo "function name ", $_GET['f'], " with parameters --> " ;
 }else{
 	$fun = $config['default_route'];
@@ -80,13 +86,19 @@ $dblink = dbconnect($config['database']); // please comment_out close_db_link
 require_once('app/controler.php');
 
 	
-	if(function_exists($fun))
-		$fun($URI[1],$URI[2],$URI[3],$URI[4],$URI[5]);
-		
-	else	
-		echo 'function not found found!! ';
+	if(function_exists($fun)){
+		$data = $fun($URI[1],$URI[2],$URI[3],$URI[4],$URI[5]);
 
 		
+	}
+	else	{
+		
+		$error404 = '<h1>404, Page Not found</h1>';
+		
+		
+	}
+
+	require('layout/app_layout.php'); # here will be the layout header 
 		
 
 /***
