@@ -1,0 +1,15 @@
+#Simple and Smallest PHP frame work .
+
+= Introduction =
+
+I loved to work on CodeIgniter, but one of my client asked me for small project which must not be on any php framework. the project was very small and he did not want in some php framework. But I was think without any frame work it will be very hard to work in later stage. So, I write my own framework. Which I am using in my other projects also.
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
