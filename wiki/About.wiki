@@ -8,8 +8,13 @@ I loved to work on CodeIgniter, but one of my client asked me for small project 
 
 
 = Details =
+Basic Idea of the project
+  * http://localhost/kiko/nafis/p1/p2 will call the function on the app/controller.php
+  * it will call the views/nafis_view.php if there is no view, in devlopment env the file will be automatically created. 
+ 
+  
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+
+file system layout: 
+[http://localhost/kiko-php/a/p1/p2/p3/ calls ->function a(p1,p2,p3) in /kiko-php/app/controler.php]
